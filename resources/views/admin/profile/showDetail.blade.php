@@ -1,4 +1,4 @@
-@extends('admin.seclayouts.main')
+{{-- @extends('admin.seclayouts.main')
 
 @section('container')
     <div class="container">
@@ -39,13 +39,19 @@
                             <td></td>
                         </tr>
                         <tr>
+                            <th>Gambar PKK </th>
+                            <td>{{ $showProfileFromController->gambarFromTableProfile }}</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
                             <th>Tentang PKK </th>
                             <td>{{ $showProfileFromController->aboutFromTableProfile }}</td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <th>Judul Visi Misi PKK </th>
+                            <th>Nama Visi Misi PKK </th>
                             <td>{{ $showProfileFromController->titleVisiMisiFromTableProfile }}</td>
                             <td></td>
                             <td></td>
@@ -61,5 +67,4 @@
             </div>
         </div>
     </div>
-@endsection
-
+@endsection --}}

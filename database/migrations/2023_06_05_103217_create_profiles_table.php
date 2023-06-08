@@ -17,11 +17,14 @@ return new class extends Migration
             $table->string('namaFromTableProfile');
             $table->string('gambarFromTableProfile')->nullable();
             $table->string('alamatFromTableProfile');
-            $table->string('emailFromTableProfile',100);
-            $table->string('teleponFromTableProfile',100);
+            $table->string('emailFromTableProfile');
+            $table->string('teleponFromTableProfile');
             $table->string('aboutFromTableProfile');
+            $table->string('excerptFromTableProfile');
             $table->text('bodyFromTableProfile');
+            $table->string('slugFromTableProfile')->unique();
             $table->string('titleVisiMisiFromTableProfile');
+            $table->string('excerptVisiMisiFromTableProfile');
             $table->text('bodyVisiMisiFromTableProfile');
             $table->timestamps();
         });
