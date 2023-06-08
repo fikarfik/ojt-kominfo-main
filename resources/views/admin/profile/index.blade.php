@@ -17,11 +17,6 @@
                     <th scope="col">Alamat</th>
                     <th scope="col">Email</th>
                     <th scope="col">No Telp</th>
-                    <th scope="col">Gambar</th>
-                    <th scope="col">Tentang</th>
-                    <th scope="col">Nama Visimisi</th>
-                    <th scope="col">Isi visimisi</th>
-                    <th scope="col">isi profile</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -33,11 +28,6 @@
                         <td>{{ $showingProfile->alamatFromTableProfile }}</td>
                         <td>{{ $showingProfile->emailFromTableProfile }}</td>
                         <td>{{ $showingProfile->teleponFromTableProfile }}</td>
-                        <td>{{ $showingProfile->gambarFromTableProfile }}</td>
-                        <td>{{ $showingProfile->aboutFromTableProfile }}</td>
-                        <td>{{ $showingProfile->titleFromTableProfile }}</td>
-                        <td>{{ $showingProfile->BodyFromTableProfile }}</td>
-                        <td>{{ $showingProfile->BodyVisiMisiFromTableProfile }}</td>
                         <td>
                             <a href="/admin/profile/{{ $showingProfile->id }}"><span
                                     class="badge bg-primary text-decoration-none">Detail Profile</span></a>

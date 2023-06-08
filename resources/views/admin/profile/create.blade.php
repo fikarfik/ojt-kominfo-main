@@ -109,11 +109,11 @@
                         <label for="title" class="form-label">
                             <b>Nama Visimisi PKK</b></label>
                         <input type="text"
-                            class="form-control @error('titleVisimisiFromTableProfile') is-invalid @enderror"
-                            name="titleVisimisiFromTableProfile" id="titleVisimisiFromTableProfile"
-                            value="{{ old('titleVisimisiFromTableProfile') }}" required
+                            class="form-control @error('titleVisiVisiFromTableProfile') is-invalid @enderror"
+                            name="titleVisiMisiFromTableProfile" id="titleVisiVisiFromTableProfile"
+                            value="{{ old('titleVisiVisiFromTableProfile') }}" required
                             placeholder="Isikan Nama Visimisi PKK | Contoh : Kelurahan Daerah">
-                        @error('titleVisimisiFromTableProfile')
+                        @error('titleVisiVisiFromTableProfile')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -121,7 +121,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="gambarFromtableProfile" class="form-label">
+                        <label for="gambarFromTableProfile" class="form-label">
                             <b>Gambar PKK</b></label>
                         <input type="file" class="form-control @error('gambarFromTableProfile') is-invalid @enderror"
                             name="gambarFromTableProfile" id="gambarFromTableProfile"

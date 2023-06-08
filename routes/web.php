@@ -24,6 +24,5 @@ Route::get('/admin/dashboard', function () {
     return view('admin.index', []);
 });
 Route::resource('/admin/kategori', AdminCategoryController::class)->middleware('auth');
-Route::resource('/admin/profile', ProfileController::class)->middleware('auth');
+Route::resource('/admin/profile',ProfileController::class)->middleware('auth');
 Route::resource('/admin/galeri', AdminGaleryController::class)->middleware('auth');
-

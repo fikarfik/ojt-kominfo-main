@@ -1,4 +1,4 @@
-{{-- @extends('admin.seclayouts.main')
+@extends('admin.seclayouts.main')
 
 @section('container')
     <div class="container">
@@ -67,4 +67,4 @@
             </div>
         </div>
     </div>
-@endsection --}}
+@endsection

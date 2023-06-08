@@ -26,35 +26,92 @@ class ProfileController extends Controller
         /**
          * Store a newly created resource in storage.
          */
-        public function store(Request $request, Profile $profile )
+        public function store(Request $request )
         {
-            
-             $rules = [
-            "namaFromTablelProfile" => "required",
-            "slugFromTableProfile" => "required|unique:profiles",
-            "alamatFromTableProfile" => "required",
-            "emailFromTableProfile" => "required",
-            "teleponFromTableProfile" => "required",
-            "aboutFromtableProfile" => "required",
-            "bodyFromTableProfile" => "required",
-            "titleVisiMisiFromTableProfile" => "required",
-            "gambarFromTableProfile" => 'image|file|max:2046',
-            "bodyVisiMisiFromTableProfile" => "required"
-        ];
- 
-        $validatedData = $request->validate($rules);
-        $validatedData['gambarFromTableProfile'] = $request->file('gambarFromTableProfile')->store('profile-images');
-
-         if ($request->slugFromTablePost != $profile->slugFromTablePost) {
-        $validatedData['slugFromTableProfile'] = Str::slug($request->slugFromTableProfile, '-');
-         }
-        $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['excerptFromTableProfile'] = Str::limit(strip_tags($request->bodyFromTableProfile), 100, '...');
-        $validatedData['excerptVisiMisiFromTableProfile'] = Str::limit(strip_tags($request->bodyVisiMisiFromTableProfile), 100, '...');
-
-    Profile::create($validatedData);
+             {
+        // Validate the incoming request data
+        $validatedData = $request->validate([
+            'namaFromTableProfile' => 'required',
+            'slugFromTableProfile' => 'required',
+            'titleVisiMisiFromTableProfile' => 'required',
+            'gambarFromTableProfile' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            // Add more validation rules for other fields
+        ]);
         
-        return redirect('/admin/profile')->with('success', 'berita berhasil di tambahkan');
+      
+
+        // Create a new Profile instance and populate it with the validated data
+        $profile = new Profile();
+        $profile->user_id = $request->user_id;
+        $profile->namaFromTableProfile= $validatedData['namaFromTableProfile'];
+        $profile->slugFromTableProfile = $validatedData['slugFromTableProfile'];
+        $profile->titleVisiMisiFromTableProfile = $validatedData['titleVisiMisiFromTableProfile'];
+
+
+        // Check if an image file is uploaded
+        if ($request->hasFile('gambarFromTableProfile')) {
+        $image = $request->file('gambarFromTableProfile');
+
+        // Generate a unique filename for the image
+        $filename = time() . '.' . $image->getClientOriginalExtension();
+
+        // Store the uploaded image file in the storage/app/public directory
+        $image->storeAs('public', $filename);
+
+        // Save the image filename to the profile instance
+        $profile->gambarFromTableProfile = $filename;
+    
+
+
+        $profile['user_id'] = auth()->user()->id;
+        $profile['excerptFromTableProfile'] = Str::limit(strip_tags($request->bodyFromTableProfile), 100, '...');
+        $profile['excerptVisiMisiFromTableProfile'] = Str::limit(strip_tags($request->bodyVisiMisiFromTableProfile), 100, '...');
+
+        }
+
+        $profile->alamatFromTableProfile = $request->alamatFromTableProfile;
+        $profile->emailFromTableProfile = $request->emailFromTableProfile;
+        $profile->teleponFromTableProfile = $request->teleponFromTableProfile;
+        $profile->aboutFromTableProfile = $request->aboutFromTableProfile;
+        $profile->titleVisiMisiFromTableProfile = $request->titleVisiMisiFromTableProfile;
+        $profile->bodyFromTableProfile = $request->bodyFromTableProfile;
+        $profile->bodyVisiMisiFromTableProfile = $request->bodyVisiMisiFromTableProfile;
+        // Add more fields as needed
+
+        // Save the profile data
+         $profile->save();
+
+        // Redirect to the appropriate page based on the saved data
+        
+        return redirect('admin/profile')->with('success', 'Data profil berhasil disimpan.');
+         
+    }
+    //          $rules = [
+    //         "namaFromTablelProfile" => "required",
+    //         "slugFromTableProfile" => "required|unique:profiles",
+    //         "alamatFromTableProfile" => "required",
+    //         "emailFromTableProfile" => "required",
+    //         "teleponFromTableProfile" => "required",
+    //         "aboutFromtableProfile" => "required",
+    //         "bodyFromTableProfile" => "required",
+    //         "titleVisiMisiFromTableProfile" => "required",
+    //         "gambarFromTableProfile" => 'image|file|max:2046',
+    //         "bodyVisiMisiFromTableProfile" => "required"
+    //     ];
+ 
+    //     $validatedData = $request->validate($rules);
+    //     $validatedData['gambarFromTableProfile'] = $request->file('gambarFromTableProfile')->store('profile-images');
+
+    //      if ($request->slugFromTablePost != $profile->slugFromTablePost) {
+    //     $validatedData['slugFromTableProfile'] = Str::slug($request->slugFromTableProfile, '-');
+    //      }
+    //     $validatedData['user_id'] = auth()->user()->id;
+    //     $validatedData['excerptFromTableProfile'] = Str::limit(strip_tags($request->bodyFromTableProfile), 100, '...');
+    //     $validatedData['excerptVisiMisiFromTableProfile'] = Str::limit(strip_tags($request->bodyVisiMisiFromTableProfile), 100, '...');
+
+    // Profile::create($validatedData);
+        
+    //     return redirect('/admin/profile')->with('success', 'berita berhasil di tambahkan');
     
         //     $request->validate([
         //     'namaFromTableProfile' => 'required|string|max:255',
@@ -146,10 +203,14 @@ class ProfileController extends Controller
          * Remove the specified resource from storage.
          */
         public function destroy(Profile $profile)
-        {
-           Profile::destroy($profile->id);
-           return redirect('/admin/profile')->with('success', 'Berhasil di hapus');
+       {
+        if($profile->gambarFromTableProfile) {
+            Storage::delete($profile->gambarFromTableProfile);
         }
+
+        Profile::destroy($profile->id);
+        return redirect('/admin/profile')->with('success', 'Berhasil Di Hapus');
+    }
        
     
 }
