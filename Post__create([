@@ -1,0 +1,23 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#7181
+    [34mall[39m: [
+      [34;4mApp\Models\Post[39;24m {#6959
+        [34mid[39m: [35m1[39m,
+        [34mtitleFromTablePost[39m: "[32mJudul Artikel Pertama[39m",
+        [34mexcerptFromTablePost[39m: "[32mLorem ipsum dolor sit amet consectetur adipisicing elit. Et praesentium, doloremque dolore libero possimus provident beatae quisquam harum, accusantium, maxime exercitationem. Accusantium veritatis numquam corrupti quas, est voluptates eius fuga nemo odit illo animi hic asperiores pariatur recusandae, labore porro? Reiciendis, tempora ipsa. Reiciendis earum et eos sapiente, iure id.[39m",
+        [34mbodyFromTablePost[39m: "[32m<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, necessitatibus sunt, nemo, placeat assumenda saepe delectus quisquam commodi debitis incidunt distinctio voluptate officiis! Harum ipsum ducimus, modi quas pariatur vero similique sint fuga vitae obcaecati doloribus iure aliquid, voluptatibus perferendis in laborum, facilis aliquam iusto quod a porro non dolores. Omnis quaerat labore reiciendis eveniet obcaecati tenetur quam, sed quos. Aperiam dolore incidunt eveniet perspiciatis natus voluptate? Adipisci, iste dicta!</p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est veniam saepe totam iure accusamus. Velit, voluptatibus distinctio! Deleniti, corrupti. Enim repudiandae blanditiis ad quibusdam doloribus! Vero commodi vel distinctio reprehenderit consectetur ipsum quos laboriosam soluta harum quod, velit, suscipit voluptas architecto eligendi earum. Sequi enim suscipit esse voluptates iure explicabo aperiam ea tenetur accusantium dicta. Ratione quae totam voluptatum illo similique reprehenderit voluptate, delectus ea neque veniam ullam aut. Fuga!</p>[39m",
+        [34mpublished_atFromTablePost[39m: [36mnull[39m,
+        [34mcreated_at[39m: "[32m2023-05-17 11:50:20[39m",
+        [34mupdated_at[39m: "[32m2023-05-17 11:50:20[39m",
+      },
+      [34;4mApp\Models\Post[39;24m {#7175
+        [34mid[39m: [35m2[39m,
+        [34mtitleFromTablePost[39m: "[32mJudul Artikel Kedua[39m",
+        [34mexcerptFromTablePost[39m: "[32mLorem ipsum dolor sit amet consectetur adipisicing elit. Et praesentium, doloremque dolore libero possimus provident beatae quisquam harum, accusantium, maxime exercitationem. Accusantium veritatis numquam corrupti quas, est voluptates eius fuga nemo odit illo animi hic asperiores pariatur recusandae, labore porro? Reiciendis, tempora ipsa. Reiciendis earum et eos sapiente, iure id.[39m",
+        [34mbodyFromTablePost[39m: "[32m<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, necessitatibus sunt, nemo, placeat assumenda saepe delectus quisquam commodi debitis incidunt distinctio voluptate officiis! Harum ipsum ducimus, modi quas pariatur vero similique sint fuga vitae obcaecati doloribus iure aliquid, voluptatibus perferendis in laborum, facilis aliquam iusto quod a porro non dolores. Omnis quaerat labore reiciendis eveniet obcaecati tenetur quam, sed quos. Aperiam dolore incidunt eveniet perspiciatis natus voluptate? Adipisci, iste dicta!</p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est veniam saepe totam iure accusamus. Velit, voluptatibus distinctio! Deleniti, corrupti. Enim repudiandae blanditiis ad quibusdam doloribus! Vero commodi vel distinctio reprehenderit consectetur ipsum quos laboriosam soluta harum quod, velit, suscipit voluptas architecto eligendi earum. Sequi enim suscipit esse voluptates iure explicabo aperiam ea tenetur accusantium dicta. Ratione quae totam voluptatum illo similique reprehenderit voluptate, delectus ea neque veniam ullam aut. Fuga!</p>[39m",
+        [34mpublished_atFromTablePost[39m: [36mnull[39m,
+        [34mcreated_at[39m: "[32m2023-05-17 11:50:32[39m",
+        [34mupdated_at[39m: "[32m2023-05-17 11:50:32[39m",
+      },
+    ],
+  }
+
