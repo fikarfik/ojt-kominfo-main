@@ -40,4 +40,10 @@ class Profile extends Model
 
     }
 
+    public function getRouteKeyName() {
+
+    return "slugFromTableProfile";
+
+    }
+
 } 

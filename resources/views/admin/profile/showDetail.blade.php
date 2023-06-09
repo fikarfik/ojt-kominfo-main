@@ -34,15 +34,20 @@
                         </tr>
                         <tr>
                             <th>Isi Halaman Profil PKK </th>
-                            <td>{{ $showProfileFromController->bodyFromTableProfile }}</td>
+                            <td>{!! $showProfileFromController->bodyFromTableProfile !!}</td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <th>Gambar PKK </th>
-                            <td>{{ $showProfileFromController->gambarFromTableProfile }}</td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                @if ($showProfileFromController->gambarFromTableProfile)
+                                    <img src="{{ asset('storage/' . $showProfileFromController->gambarFromTableProfile) }}"
+                                        alt="Gambar PKK" style="max-width: 150px">
+                                @else
+                                    Tidak ada gambar PKK
+                                @endif
+                            </td>
                         </tr>
                         <tr>
                             <th>Tentang PKK </th>
@@ -58,7 +63,7 @@
                         </tr>
                         <tr>
                             <th>Isi Halaman Visi Misi PKK </th>
-                            <td>{{ $showProfileFromController->bodyFromTableProfile }}</td>
+                            <td>{!! $showProfileFromController->bodyFromTableProfile !!}</td>
                             <td></td>
                             <td></td>
                         </tr>

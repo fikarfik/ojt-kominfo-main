@@ -1,131 +1,201 @@
-@extends('admin.layouts.main')
+@extends('admin.seclayouts.main')
 
 @section('container')
-    <div class="row">
-        <div class="col-lg-12 grid-margin stretch-card">
-            <div class="card">
-
-                <h4><i class="bi bi-pen-fill" style="color: green"></i> Ubah Data Profile
-                </h4>
-
-                <div class="card-header">
-                    <button type="button" class="btn btn-sm btn-primary"
-                        onclick="window.location='{{ url('data-profiles') }}'">
-                        << Kembali</button>
-                </div>
-                <div class="card-body">
-                    <form action="{{ url('update-profiles', $dt->id) }}" method="POST" enctype="multipart/form-data">
-                        {{-- @method('put') --}}
-                        {{ csrf_field() }}
-                        <div class=" row mb-3">
-                            <label for="txtnama_pkk" class="col-sm-2 col-form-label">Nama</label>
-                            <div class="col-md-10">
-                                <input type="text" class="form-control" id="txtnama_pkk" name="nama_pkk"
-                                    placeholder="silahkan isi" value="{{ $dt->nama_pkk }}">
-
-                            </div>
-                        </div>
-                        <div class=" row mb-3">
-                            <label for="txtnama_pkk" class="col-sm-2 col-form-label">user</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" id="txtuser" name="user_id"
-                                    placeholder="silahkan isi" value="{{ $dt->user_id }}">
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="txtemail" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" id="txtemail" name="email"
-                                    placeholder="silahkan isi" value=" {{ $dt->email }}">
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="txtphone" class="col-sm-2 col-form-label">No.Telp</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" id="txtphone" name="telepon"
-                                    placeholder="silahkan isi" value=" {{ $dt->telepon }}">
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="txtabout" class="col-sm-2 col-form-label">About</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" id="txtabout" name="about"
-                                    placeholder="silahkan isi" value=" {{ $dt->about }}">
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="txtkutipan" class="col-sm-2 col-form-label">Kutipan</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" cols="66" id="txtkutipan"
-                                    name="excerpt_profile" placeholder="silahkan isi" value=" {{ $dt->excerpt_profile }}">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="texisi" class="col-sm-2 col-form-label">Isi</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" rows="7" cols="66"
-                                    style="resize: none" id="txtisi" name="body_profile"
-                                    value=" {{ $dt->body_profile }}">
-                            </div>
-                        </div>
-                        <div class=" row mb-3">
-                            <label for="txtalamat" class="col-sm-2 col-form-label">Alamat</label>
-                            <div class="col-sm-7">
-                                <input type="text" type="text" class="form-control" cols="66" id="txtalamat"
-                                    name="alamat" placeholder="silahkan isi" value=" {{ $dt->alamat }}">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="txtabout" class="col-sm-2 col-form-label">Judul_visimisi</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" id="txtjudul" name="judul_visimisi"
-                                    placeholder="silahkan isi" value=" {{ $dt->judul_visimisi }}">
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="txtkutipan" class="col-sm-2 col-form-label">Excerpt_visimisi</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" cols="66" id="txtexcerpt"
-                                    name="excerpt_visimisi" placeholder="silahkan isi"
-                                    value=" {{ $dt->excerpt_visimisi }}">
-
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="txtkutipan" class="col-sm-2 col-form-label">body_visimisi</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" cols="66" id="txtisi_visimisi"
-                                    name="body_visimisi" placeholder="silahkan isi" value=" {{ $dt->body_visimisi }}">
-
-                            </div>
-                        </div>
-                        <div class=" row mb-3">
-                            <label for="txtgambar" class="col-sm-2 col-form-label">Gambar</label>
-                            <div class="col-sm-7">
-                                <input type="file" class="form-control" id="txtgamabr" name="gambar_hero"
-                                    placeholder="silahkan isi">
-                            </div>
-
-                            {{-- <div class="col-sm-7">
-                                <img src="{{ asset('img/' . $dt->gambar_hero) }}" height="100%" width="90%"
-                                    alt="" srcset="" class="from-control">
-                            </div> --}}
-                        </div>
-                        <div class="row mb-3">
-                            <label for="" class="col-sm-2 col-form-label"></label>
-                            <div class="col-sm-7">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
-                            </div>
-
-                        </div>
-                    </form>
+    <div class="container">
+        <div class="justify-content-start flex-wrap flex-md-nowrap align-items-center pt-5 my-3">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Mengedit Data Profile</h1>
                 </div>
             </div>
         </div>
-    </div>
-@endsection
+        <div class="row">
+            <div class="col-8">
+                <form action="/admin/profile/{{ $showProfileFromController->slugFromTableProfile }}" method="post"
+                    enctype="multipart/form-data">
+                    @method('put')
+                    @csrf
+                    <div class="mb-3">
+                        <label for="namaFromTableProfile" class="form-label">
+                            <b>Nama PKK</b></label>
+                        <input type="text" class="form-control @error('namaFromTableProfile') is-invalid @enderror"
+                            name="namaFromTableProfile" id="namaFromTableProfile"
+                            value="{{ old('namaFromTableProfile', $showProfileFromController->namaFromTableProfile) }}"
+                            required autofocus placeholder="Isikan Nama PKK | Contoh : Kelurahan Daerah">
+                        @error('namaFromTableProfile')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="slug" class="form-label">
+                            <b>Buat Link Profile</b></label>
+                        <input type="text" class="form-control @error('slugFromTableProfile') is-invalid @enderror"
+                            name="slugFromTableProfile" id="slugFromTableProfile"
+                            value="{{ old('slugFromTableProfile', $showProfileFromController->slugFromTableProfile) }}"
+                            required autofocus>
+                        @error('slugFromTableProfile')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="alamat" class="form-label">
+                            <b>Alamat PKK</b></label>
+                        <input type="text" class="form-control @error('alamatFromTableProfile') is-invalid @enderror"
+                            name="alamatFromTableProfile" id="alamatFromTableProfile"
+                            value="{{ old('alamatFromTableProfile', $showProfileFromController->alamatFromTableProfile) }}"
+                            required placeholder="Isikan Alamat PKK">
+                        @error('alamatFromTableProfile')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">
+                            <b>Email PKK</b></label>
+                        <input type="text" class="form-control @error('emailFromTableProfile') is-invalid @enderror"
+                            name="emailFromTableProfile" id="emailFromTableProfile"
+                            value="{{ old('emailFromTableProfile', $showProfileFromController->emailFromTableProfile) }}"
+                            required placeholder="Isikan Email PKK | Contoh : Kelurahan Daerah">
+                        @error('emailFromTableProfile')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="telepon" class="form-label">
+                            <b>Telepon PKK</b></label>
+                        <input type="text" class="form-control @error('teleponFromTableProfile') is-invalid @enderror"
+                            name="teleponFromTableProfile" id="teleponFromTableProfile"
+                            value="{{ old('teleponFromTableProfile', $showProfileFromController->teleponFromTableProfile) }}"
+                            required placeholder="Isikan Nomor Telepon PKK">
+                        @error('teleponFromTableProfile')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="bodyFromTableProfile"><b>Isi Tulisan Profile PKK</b></label>
+                        <textarea name="bodyFromTableProfile" id="bodyFromTableProfile">{{ $showProfileFromController->bodyFromTableProfile }}</textarea>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="aboutFromTableProfile" class="form-label">
+                            <b>Tentang</b></label>
+                        <input type="text" class="form-control @error('aboutFromTableProfile') is-invalid @enderror"
+                            name="aboutFromTableProfile" id="aboutFromTableProfile"
+                            value="{{ old('aboutFromTableProfile', $showProfileFromController->aboutFromTableProfile) }}"
+                            required placeholder="Isikan">
+                        @error('aboutFromTableProfile')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="my-5">
+                        <h1>Membuat Visi Misi</h1>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">
+                            <b>Nama Visimisi PKK</b></label>
+                        <input type="text"
+                            class="form-control @error('titleVisiVisiFromTableProfile') is-invalid @enderror"
+                            name="titleVisiMisiFromTableProfile" id="titleVisiVisiFromTableProfile"
+                            value="{{ old('titleVisiVisiFromTableProfile', $showProfileFromController->titleVisiMisiFromTableProfile) }}"
+                            required placeholder="Isikan Nama Visimisi PKK | Contoh : Kelurahan Daerah">
+                        @error('titleVisiVisiFromTableProfile')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="gambarFromTableProfile" class="form-label">
+                            <b>Gambar PKK</b></label>
+                        <input type="hidden" name="oldImage"
+                            value="{{ $showProfileFromController->gambarFromTableProfile }}">
+                        @if ($showProfileFromController->gambarFromTableProfile)
+                            <img src="{{ asset('storage/' . $showProfileFromController->gambarFromTableProfile) }}"
+                                class="img-preview img-fluid mb-3 d-block">
+                        @else
+                            <img class="img-preview img-fluid mb-3">
+                        @endif
+                        <input type="file" class="form-control @error('gambarFromTableProfile') is-invalid @enderror"
+                            name="gambarFromTableProfile" id="gambarFromTableProfile" onchange="previewImage()">
+                        @error('gambarFromTableProfile')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <img class="img-preview" src="#" alt="Pratinjau Gambar" style="display: none;">
+
+
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="bodyVisiMisiFromTableProfile"><b>Isi Tulisan Visi Misi</b></label>
+                            <textarea name="bodyVisiMisiFromTableProfile" id="bodyVisiMisiFromTableProfile">{{ $showProfileFromController->bodyVisiMisiFromTableProfile }}</textarea>
+                        </div>
+                        <button type="submit" name="submit" id="submit"
+                            class="btn mt-2 mb-5 float-center btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            ClassicEditor
+                .create(document.querySelector('textarea[name="bodyVisiMisiFromTableProfile"]'), {
+                    ckfinder: {
+                        uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json',
+                    },
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>
+
+        <script>
+            ClassicEditor
+                .create(document.querySelector('textarea[name="bodyFromTableProfile"]'), {
+                    ckfinder: {
+                        uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json',
+                    },
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>
+
+        <script>
+            function previewImage() {
+                const image = document.querySelector('#gambarFromTableProfile');
+                const imgPreview = document.querySelector('.img-preview');
+
+
+                imgPreview.style.display = 'block';
+
+                const oFReader = new FileReader();
+                oFReader.readAsDataURL(image.files[0])
+
+                oFReader.onload = function(oFRevent) {
+                    imgPreview.src = oFRevent.target.result;
+                }
+            }
+        </script>
+    @endsection

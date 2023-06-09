@@ -2,8 +2,6 @@
 
 @section('container')
     <div class="container">
-
-
         <div class="justify-content-start flex-wrap flex-md-nowrap align-items-center pt-5 my-3">
             <div class="row">
                 <div class="col-12">
@@ -48,11 +46,12 @@
                     <div class="mb-3">
                         <label for="imageFromTablePost" class="form-label">
                             <b>Gambar</b></label>
-                            <input type="hidden" name="oldImage" value="{{ $showPostFromController->imageFromTablePost }}">
-                        @if($showPostFromController->imageFromTablePost)
-                        <img src="{{ asset('storage/'. $showPostFromController->imageFromTablePost) }}" class="img-preview img-fluid mb-3 d-block">
+                        <input type="hidden" name="oldImage" value="{{ $showPostFromController->imageFromTablePost }}">
+                        @if ($showPostFromController->imageFromTablePost)
+                            <img src="{{ asset('storage/' . $showPostFromController->imageFromTablePost) }}"
+                                class="img-preview img-fluid mb-3 d-block">
                         @else
-                        <img class="img-preview img-fluid mb-3">
+                            <img class="img-preview img-fluid mb-3">
                         @endif
                         <input type="file" class="form-control @error('imageFromTablePost') is-invalid @enderror"
                             name="imageFromTablePost" id="imageFromTablePost" onchange="previewImage()">

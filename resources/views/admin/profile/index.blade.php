@@ -29,10 +29,10 @@
                         <td>{{ $showingProfile->emailFromTableProfile }}</td>
                         <td>{{ $showingProfile->teleponFromTableProfile }}</td>
                         <td>
-                            <a href="/admin/profile/{{ $showingProfile->id }}"><span
+                            <a href="/admin/profile/{{ $showingProfile->slugFromTableProfile }}"><span
                                     class="badge bg-primary text-decoration-none">Detail Profile</span></a>
 
-                            <a href="/admin/profile/{{ $showingProfile->id }}/edit"><span
+                            <a href="/admin/profile/{{ $showingProfile->slugFromTableProfile }}/edit"><span
                                     class="badge bg-warning text-decoration-none">Edit</span></a>
 
                             <form action="/admin/profile/{{ $showingProfile->id }}" method="post" class="d-inline">

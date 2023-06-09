@@ -37,8 +37,6 @@ class ProfileController extends Controller
             'gambarFromTableProfile' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             // Add more validation rules for other fields
         ]);
-        
-      
 
         // Create a new Profile instance and populate it with the validated data
         $profile = new Profile();
@@ -46,7 +44,6 @@ class ProfileController extends Controller
         $profile->namaFromTableProfile= $validatedData['namaFromTableProfile'];
         $profile->slugFromTableProfile = $validatedData['slugFromTableProfile'];
         $profile->titleVisiMisiFromTableProfile = $validatedData['titleVisiMisiFromTableProfile'];
-
 
         // Check if an image file is uploaded
         if ($request->hasFile('gambarFromTableProfile')) {
@@ -61,8 +58,7 @@ class ProfileController extends Controller
         // Save the image filename to the profile instance
         $profile->gambarFromTableProfile = $filename;
     
-
-
+         $profile['slugFromTableProfile'] = Str::slug($request->slugFromTableProfile, '-');
         $profile['user_id'] = auth()->user()->id;
         $profile['excerptFromTableProfile'] = Str::limit(strip_tags($request->bodyFromTableProfile), 100, '...');
         $profile['excerptVisiMisiFromTableProfile'] = Str::limit(strip_tags($request->bodyVisiMisiFromTableProfile), 100, '...');
@@ -83,7 +79,7 @@ class ProfileController extends Controller
 
         // Redirect to the appropriate page based on the saved data
         
-        return redirect('admin/profile')->with('success', 'Data profil berhasil disimpan.');
+        return redirect('/admin/profile')->with('success', 'Data profil berhasil disimpan.');
          
     }
     //          $rules = [
@@ -113,40 +109,7 @@ class ProfileController extends Controller
         
     //     return redirect('/admin/profile')->with('success', 'berita berhasil di tambahkan');
     
-        //     $request->validate([
-        //     'namaFromTableProfile' => 'required|string|max:255',
-        //     'user_id' => 'required|string|max:255',
-        
-        //     'gambarFromTableProfile' => 'required|image|max:4096',
-        //     'alamatFromTableProfile' => 'required|string|max:255',
-        //     'emailFromTableProfile' => 'required|string|max:255',
-        //     'teleponFromTableProfile' => 'required|numeric',
-        //     'aboutFromTableProfile' => 'required|string',
-        //     'bodyFromTableProfile' => 'required|string',
-        //     'titleVisimisiFromTableProfile' => 'required|string',
-        //     'bodyVisimisiFromTableProfile' => 'required|string',
-        // ]);
-    
-        //     $nm = $request->gambarFromTableProfile;
-        //     $namafile = $nm->getClientOriginalName();
-    
-        //     $profileDataFromController = new Profile;
-        //     $profileDataFromController->user_id = $request->user_id;
-        //     $profileDataFromController->namaFromTableProfile = $request->namaFromTableProfile;
-        //     $profileDataFromController->gambarFromTableProfile = $namafile;
-        //     $profileDataFromController->alamatFromTableProfile = $request->alamatFromTableProfile;
-        //     $profileDataFromController->emailFromTableProfile = $request->emailFromTableProfile;
-        //     $profileDataFromController->teleponFromTableProfile = $request->teleponFromTableProfile;
-        //     $profileDataFromController->aboutFromTableProfile = $request->aboutFromTableProfile;
-        //     $profileDataFromController->bodyFromTableProfile = $request->bodyFromTableProfile;
-        //     $profileDataFromController->titleVisimisiFromTableProfile = $request->titleVisimisiFromTableProfile;
-        //     $profileDataFromController->bodyVisimisiFromTableProfile = $request->bodyVisimisiFromTableProfile;
-    
-        //     $nm->move(public_path().'/img', $namafile);
-        //     $profileDataFromController->save();
-        //     return redirect('admin/profile')->withSuccess('Data berhasil di tambahkan');
-
-        }
+    }
     
         /**
          * Display the specified resource.
@@ -162,13 +125,15 @@ class ProfileController extends Controller
         /**
          * Show the form for editing the specified resource.
          */
-        public function edit($id)
+        public function edit(Profile $profile)
         {
             // return dd('test');
             // $dtprofils = profil::all();
-            $dt = Profile::find($id);
-            return view('profile.edit-profiles'
-            , compact ('dt'));
+            // $dt = Profile::find($id);
+            return view('admin.profile.edit', [
+                'showProfileFromController' => $profile
+            ] );
+           
     
     
         }
@@ -176,27 +141,64 @@ class ProfileController extends Controller
         /**
          * Update the specified resource in storage.
          */
-        public function update(Request $request, $id)
+        public function update(Request $request, Profile $profile)
         {
-            // $ubah = Profile::find($id);
-            // $awal = $ubah->gambarFromTableProfile;
-    
-            // $dt = [
-            //     'namaFromTableProfile' =>$request['namaFromTableProfile'],
-            //     'user_id' =>$request['user_id'],
-            //     'gambarFromTableProfile' => $awal,
-            //     'alamatFromTableProfile' =>$request['alamatFromTableProfile'],
-            //     'emailFromTableProfile' =>$request['emailFromTableProfile'],
-            //     'teleponFromTableProfile' =>$request['teleponFromTableProfile'],
-            //     'aboutFromTableProfile' =>$request['aboutFromTableProfile'],
-            //     'bodyFromTableProfile' =>$request['bodyFromTableProfile'],
-            //     'titleVisimisiFromTableProfile' =>$request['titleVisimisiFromTableProfile'],
-            //     'bodyVisimisiFromTableProfile' =>$request['bodyVisimisiFromTableProfile'],
-    
-            // ];
-            // $request->gambarFromTableProfile->move(public_path().'/img', $awal);
-            // $ubah->update($dt);
-            // return redirect('data-profiles')->with('toast_success', 'Data Berhasil Di Ubah');
+            // Validate the incoming request data
+        $validatedData = $request->validate([
+            'namaFromTableProfile' => 'required',
+            'slugFromTableProfile' => 'required|unique:profiles,slugFromTableProfile,' . $profile->id,
+            'titleVisiMisiFromTableProfile' => 'required',
+            'gambarFromTableProfile' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            // Add more validation rules for other fields
+        ]);
+
+        // Update the profile instance with the validated data
+        $profile->namaFromTableProfile = $validatedData['namaFromTableProfile'];
+        $profile->slugFromTableProfile = $validatedData['slugFromTableProfile'];
+        $profile->titleVisiMisiFromTableProfile = $validatedData['titleVisiMisiFromTableProfile'];
+
+         // Check if an image file is uploaded
+        if ($request->hasFile('gambarFromTableProfile')) {
+            $image = $request->file('gambarFromTableProfile');
+
+            // Generate a unique filename for the image
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+
+            // Store the uploaded image file in the storage/app/public directory
+            Storage::disk('public')->put($filename, file_get_contents($image));
+
+            // Delete the old image file
+            if ($profile->gambarFromTableProfile) {
+                Storage::disk('public')->delete($profile->gambarFromTableProfile);
+            }
+
+            // Save the new image filename to the profile instance
+            $profile->gambarFromTableProfile = $filename;
+
+        $profile['user_id'] = auth()->user()->id;
+        $profile['excerptFromTableProfile'] = Str::limit(strip_tags($request->bodyFromTableProfile), 100, '...');
+        $profile['excerptVisiMisiFromTableProfile'] = Str::limit(strip_tags($request->bodyVisiMisiFromTableProfile), 100, '...');
+
+
+             // Update other fields as needed
+        $profile->alamatFromTableProfile = $request->alamatFromTableProfile;
+        $profile->emailFromTableProfile = $request->emailFromTableProfile;
+        $profile->teleponFromTableProfile = $request->teleponFromTableProfile;
+        $profile->aboutFromTableProfile = $request->aboutFromTableProfile;
+        $profile->titleVisiMisiFromTableProfile = $request->titleVisiMisiFromTableProfile;
+        $profile->bodyFromTableProfile = $request->bodyFromTableProfile;
+        $profile->bodyVisiMisiFromTableProfile = $request->bodyVisiMisiFromTableProfile;
+        // Add more fields as needed
+
+        // Save the updated profile data
+        $profile->save();
+
+        // Redirect to the appropriate page based on the saved data
+        return redirect('/admin/profile')->with('success', 'Data profil berhasil diperbarui.');
+        }
+
+          
+          
         }
     
         /**
@@ -214,12 +216,3 @@ class ProfileController extends Controller
        
     
 }
-    /**
-     * Display a listing of the resource.
-     */
-   
-
-    /**
-     * Show the form for creating a new resource.
-     */
-   
