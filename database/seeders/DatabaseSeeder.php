@@ -18,19 +18,433 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        // User::create([
-        //     'name' => 'Kelurahan Jodipan',
-        //     'username' => 'jodipan',
-        //     'email' => 'kelurahan.jodipan@admin.com',
-        //     'password' => bcrypt('kelurahan.jodipan')
-        // ]);
+         User::create([
+            'name' => 'Kecamatan Belimbing',
+            'username' => 'belimbing',
+            'email' => 'kecamtan.belimbing@admin.com',
+            'password' => bcrypt('kelurahan.jodipan')
+        ]);
 
-        // User::create([
-        //     'name' => 'Klojen',
-        //     'username' => 'klojen',
-        //     'email' => 'kelurahan.klojen@admin.com',
-        //     'password' => bcrypt('kelurahan.klojen')
-        // ]);
+         User::create([
+            'name' => 'Kelurahan Arjosari',
+            'username' => 'arjosari',
+            'email' => 'kelurahan.arjosari@admin.com',
+            'password' => bcrypt('kelurahan.arjosari')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Balearjosari',
+            'username' => 'balearjosari',
+            'email' => 'kelurahan.balearjosari@admin.com',
+            'password' => bcrypt('kelurahan.balearjosari')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Belimbing',
+            'username' => 'belimbing',
+            'email' => 'kelurahan.belimbing@admin.com',
+            'password' => bcrypt('kelurahan.belimbing')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Bunulrejo',
+            'username' => 'bunulrejo',
+            'email' => 'kelurahan.bunulrejo@admin.com',
+            'password' => bcrypt('kelurahan.bunulrejo')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Jodipan',
+            'username' => 'jodipan',
+            'email' => 'kelurahan.jodipan@admin.com',
+            'password' => bcrypt('kelurahan.jodipan')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Kesatrian',
+            'username' => 'kesatrian',
+            'email' => 'kelurahan.kesatrian@admin.com',
+            'password' => bcrypt('kelurahan.kesatrian')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Pandanwangi',
+            'username' => 'pandanwangi',
+            'email' => 'kelurahan.pandanwangi@admin.com',
+            'password' => bcrypt('kelurahan.pandanwangi')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Polehan',
+            'username' => 'polehan',
+            'email' => 'kelurahan.polehan@admin.com',
+            'password' => bcrypt('kelurahan.polehan')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Polowijen',
+            'username' => 'polowijen',
+            'email' => 'kelurahan.polowijen@admin.com',
+            'password' => bcrypt('kelurahan.polowijen')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Purwantoro',
+            'username' => 'purwantoro',
+            'email' => 'kelurahan.purwantoro@admin.com',
+            'password' => bcrypt('kelurahan.purwantoro')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Purwodadi',
+            'username' => 'purwodadi',
+            'email' => 'kelurahan.purwodadi@admin.com',
+            'password' => bcrypt('kelurahan.purwodadi')
+        ]);
+
+         User::create([
+            'name' => 'Kecamatan Kedungkandang',
+            'username' => 'kedungkandang',
+            'email' => 'kecamatan.kedungkandang@admin.com',
+            'password' => bcrypt('kecamatan.kedungkandang')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Arjowinangun',
+            'username' => 'arjowinangun',
+            'email' => 'kelurahan.arjowinangun@admin.com',
+            'password' => bcrypt('kelurahan.arjowinangun')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Bumiayu',
+            'username' => 'bumiayu',
+            'email' => 'kelurahan.bumiayu@admin.com',
+            'password' => bcrypt('kelurahan.bumiayu')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Buring',
+            'username' => 'buring',
+            'email' => 'kelurahan.buring@admin.com',
+            'password' => bcrypt('kelurahan.buring')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Cemorokandang',
+            'username' => 'cemorokandang',
+            'email' => 'kelurahan.cemorokandang@admin.com',
+            'password' => bcrypt('kelurahan.cemorokandang')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Kedungkandang',
+            'username' => 'kedungkandang',
+            'email' => 'kelurahan.kedungkandang@admin.com',
+            'password' => bcrypt('kelurahan.kedungkandang')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Kotalama',
+            'username' => 'kotalama',
+            'email' => 'kelurahan.kotalama@admin.com',
+            'password' => bcrypt('kelurahan.kotalama')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Lesanpuro',
+            'username' => 'lesanpuro',
+            'email' => 'kelurahan.lesanpuro@admin.com',
+            'password' => bcrypt('kelurahan.lesanpuro')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Madyopuro',
+            'username' => 'madyopuro',
+            'email' => 'kelurahan.madyopuro@admin.com',
+            'password' => bcrypt('kelurahan.madyopuro')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Mergosono',
+            'username' => 'mergosono',
+            'email' => 'kelurahan.mergosono@admin.com',
+            'password' => bcrypt('kelurahan.mergosono')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Sawojajar',
+            'username' => 'sawojajar',
+            'email' => 'kelurahan.sawojajar@admin.com',
+            'password' => bcrypt('kelurahan.sawojajar')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Tlogowaru',
+            'username' => 'tlogowaru',
+            'email' => 'kelurahan.tlogowaru@admin.com',
+            'password' => bcrypt('kelurahan.tlogowaru')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Wonokoyo',
+            'username' => 'wonokoyo',
+            'email' => 'kelurahan.wonokoyo@admin.com',
+            'password' => bcrypt('kelurahan.wonokoyo')
+        ]);
+
+         User::create([
+            'name' => 'Kecamatan Klojen',
+            'username' => 'klojen',
+            'email' => 'kecamatan.klojen@admin.com',
+            'password' => bcrypt('kecamatan.klojen')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Bareng',
+            'username' => 'bareng',
+            'email' => 'kelurahan.bareng@admin.com',
+            'password' => bcrypt('kelurahan.bareng')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Gadingsari',
+            'username' => 'gadingsari',
+            'email' => 'kelurahan.gadingsari@admin.com',
+            'password' => bcrypt('kelurahan.gadingsari')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Kasin Kauman',
+            'username' => 'kasin kauman',
+            'email' => 'kelurahan.kasin kauman@admin.com',
+            'password' => bcrypt('kelurahan.kasin kauman')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Kiduldalem',
+            'username' => 'kiduldalem',
+            'email' => 'kelurahan.kiduldalem@admin.com',
+            'password' => bcrypt('kelurahan.kiduldalem')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Klojen',
+            'username' => 'klojen',
+            'email' => 'kelurahan.klojen@admin.com',
+            'password' => bcrypt('kelurahan.klojen')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Oro-Oro Dowo',
+            'username' => 'oro-oro dowo',
+            'email' => 'kelurahan.oro-orodowo@admin.com',
+            'password' => bcrypt('kelurahan.oro-orodowo')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Penanggungan',
+            'username' => 'penanggungan',
+            'email' => 'kelurahan.penanggungan@admin.com',
+            'password' => bcrypt('kelurahan.penanggungan')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Rampal Celaket',
+            'username' => 'rampal celaket',
+            'email' => 'kelurahan.rampalcelaket@admin.com',
+            'password' => bcrypt('kelurahan.rampalcelaket')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Samaan',
+            'username' => 'samaan',
+            'email' => 'kelurahan.samaan@admin.com',
+            'password' => bcrypt('kelurahan.samaan')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Sukoharjo',
+            'username' => 'sukoharjo',
+            'email' => 'kelurahan.sukoharjo@admin.com',
+            'password' => bcrypt('kelurahan.sukoharjo')
+        ]);
+
+         User::create([
+            'name' => 'Kelcamatan Lowokwaru',
+            'username' => 'lowokwaru',
+            'email' => 'kecamatan.lowokwaru@admin.com',
+            'password' => bcrypt('kecamatan.lowokwaru')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Dinoyo',
+            'username' => 'Dinoyo',
+            'email' => 'kelurahan.dinoyo@admin.com',
+            'password' => bcrypt('kelurahan.dinoyo')
+        ]);
+
+
+         User::create([
+            'name' => 'Kelurahan Jatimulyo',
+            'username' => 'jatimulyo',
+            'email' => 'kelurahan.jatimulyo@admin.com',
+            'password' => bcrypt('kelurahan.jatimulyo')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Ketawanggede ',
+            'username' => 'ketawanggede',
+            'email' => 'kelurahan.ketawanggede@admin.com',
+            'password' => bcrypt('kelurahan.ketawanggede')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Lowokwaru',
+            'username' => 'lowokwaru',
+            'email' => 'kelurahan.lowokwaru@admin.com',
+            'password' => bcrypt('kelurahan.lowokwaru')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Merjosari',
+            'username' => 'merjosari',
+            'email' => 'kelurahan.merjosari@admin.com',
+            'password' => bcrypt('kelurahan.merjosari')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Mojolangu',
+            'username' => 'mojolangu',
+            'email' => 'kelurahan.mojolangu@admin.com',
+            'password' => bcrypt('kelurahan.mojolangu')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Sumbersari',
+            'username' => 'sumbersari',
+            'email' => 'kelurahan.sumbersari@admin.com',
+            'password' => bcrypt('kelurahan.sumbersari')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Tasikmadu',
+            'username' => 'tasikmadu',
+            'email' => 'kelurahan.tasikmadu@admin.com',
+            'password' => bcrypt('kelurahan.tasikmadu')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Tlogomas',
+            'username' => 'tlogomas',
+            'email' => 'kelurahan.tlogomas@admin.com',
+            'password' => bcrypt('kelurahan.tlogomas')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Tulusrejo',
+            'username' => 'tulusrejo',
+            'email' => 'kelurahan.tulusrejo@admin.com',
+            'password' => bcrypt('kelurahan.tulusrejo')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Tunggulwulung',
+            'username' => 'Tunggulwulung',
+            'email' => 'kelurahan.tunggulwulung@admin.com',
+            'password' => bcrypt('kelurahan.tunggulwulung')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Tunjungsekar',
+            'username' => 'tunjungsekar',
+            'email' => 'kelurahan.tunjungsekar@admin.com',
+            'password' => bcrypt('kelurahan.tunjungsekar')
+        ]);
+
+         User::create([
+            'name' => 'Kecamatan Sukun',
+            'username' => 'sukun',
+            'email' => 'kecamatan.sukun@admin.com',
+            'password' => bcrypt('kecamatan.sukun')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Bakalankrajan',
+            'username' => 'bakalankrajan',
+            'email' => 'kelurahan.bakalankrajan@admin.com',
+            'password' => bcrypt('kelurahan.bakalankrajan')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Bandulan',
+            'username' => 'bandulan',
+            'email' => 'kelurahan.bandulan@admin.com',
+            'password' => bcrypt('kelurahan.bandulan')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Bandungrejosari',
+            'username' => 'bandungrejosari',
+            'email' => 'kelurahan.bandungrejosari@admin.com',
+            'password' => bcrypt('kelurahan.bandungrejosari')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Ciptomulyo',
+            'username' => 'ciptumulyo',
+            'email' => 'kelurahan.ciptomulyo@admin.com',
+            'password' => bcrypt('kelurahan.ciptomulyo')
+        ]);
+
+        User::create([
+            'name' => 'Kelurahan Gadang',
+            'username' => 'gadang',
+            'email' => 'kelurahan.gadang@admin.com',
+            'password' => bcrypt('kelurahan.gadang')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Karangbesuki',
+            'username' => 'karangbesuki',
+            'email' => 'kelurahan.karangbesuki@admin.com',
+            'password' => bcrypt('kelurahan.karangbesuki')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Kebonsari',
+            'username' => 'kebonsari',
+            'email' => 'kelurahan.kebonsari@admin.com',
+            'password' => bcrypt('kelurahan.kebonsari')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Mulyorejo',
+            'username' => 'mulyorejo',
+            'email' => 'kelurahan.mulyorejo@admin.com',
+            'password' => bcrypt('kelurahan.mulyorejo')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Pisangsandi',
+            'username' => 'pisangsandi',
+            'email' => 'kelurahan.pisangsandi@admin.com',
+            'password' => bcrypt('kelurahan.pisangsandi')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Sukun',
+            'username' => 'sukun',
+            'email' => 'kelurahan.sukun@admin.com',
+            'password' => bcrypt('kelurahan.sukun')
+        ]);
+
+         User::create([
+            'name' => 'Kelurahan Tanjungrejo',
+            'username' => 'tanjungrejo',
+            'email' => 'kelurahan.tanjungrejo@admin.com',
+            'password' => bcrypt('kelurahan.tanjungrejo')
+        ]);
 
         User::create([
             'name' => 'Nichola',
@@ -38,6 +452,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'kerjasamakol@gmail.com',
             'password' => bcrypt('12345')
         ]);
+
+
 
         // User::factory(5)->create();
         // \App\Models\User::factory()->create([
